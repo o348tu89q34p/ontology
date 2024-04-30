@@ -1,0 +1,665 @@
+@prefix : <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#> .
+
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction> rdf:type owl:Ontology ;
+                                                                           rdfs:comment "Ontology that represents the answers to flight satisfaction surveys."@en-us .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#carries
+:carries rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ;
+         rdfs:domain :Aircraft ;
+         rdfs:range :Passenger ;
+         rdfs:comment "An aircraft carries a passenger."@en-us ;
+         rdfs:label "carries" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection
+:hasConnection rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               owl:inverseOf :isConnectionOf ;
+               rdf:type owl:AsymmetricProperty ;
+               rdfs:domain :Flight ;
+               rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+               rdfs:comment "A flight has a connection on this airport."@en-us ;
+               rdfs:label "hasConnection" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination
+:hasDestination rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                owl:inverseOf :isDestinationOf ;
+                rdf:type owl:AsymmetricProperty ;
+                rdfs:domain :Flight ;
+                rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+                rdfs:comment "A flight has as destination this airport."@en-us ;
+                rdfs:label "hasDestination" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin
+:hasOrigin rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isOriginOf ;
+           rdf:type owl:AsymmetricProperty ;
+           rdfs:domain :Flight ;
+           rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+           rdfs:comment "A flight has as origin this airport."@en-us ;
+           rdfs:label "hasOrigin" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasPassenger
+:hasPassenger rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdf:type owl:AsymmetricProperty ;
+              rdfs:domain :Flight ;
+              rdfs:range :Passenger ;
+              rdfs:comment "A flight has this particular passanger."@en-us ;
+              rdfs:label "hasPassenger" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTicketType
+:hasTicketType rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdf:type owl:AsymmetricProperty ;
+               rdfs:domain :Review ;
+               rdfs:range :SeatType ;
+               rdfs:comment "Connect a review with its seat type."@en-us ;
+               rdfs:label "hasSeatType" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTravelerType
+:hasTravelerType rdf:type owl:ObjectProperty ,
+                          owl:AsymmetricProperty ;
+                 rdfs:domain :Review ;
+                 rdfs:range :TravelerType ;
+                 rdfs:comment "The type of traveler that a review has."@en-us ;
+                 rdfs:label "hasTravelerType" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isConnectionOf
+:isConnectionOf rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdf:type owl:AsymmetricProperty ;
+                rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+                rdfs:range :Flight ;
+                rdfs:comment "The airport is a connection of the given flight."@en-us ;
+                rdfs:label "isConnectionOf" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDestinationOf
+:isDestinationOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf owl:topObjectProperty ;
+                 rdf:type owl:AsymmetricProperty ;
+                 rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+                 rdfs:range :Flight ;
+                 rdfs:comment "The airport is the destination of the given flight."@en-us ;
+                 rdfs:label "isDestinationOf" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isOriginOf
+:isOriginOf rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:AsymmetricProperty ;
+            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+            rdfs:range :Flight ;
+            rdfs:comment "The airport is the origin of the given flight."@en-us ;
+            rdfs:label "isOriginOf" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isUsedIn
+:isUsedIn rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          owl:inverseOf :uses ;
+          rdf:type owl:AsymmetricProperty ;
+          rdfs:domain :Aircraft ;
+          rdfs:range :Flight ;
+          rdfs:comment "The aircraft is used in the given flight."@en-us ;
+          rdfs:label "isUsedIn" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy
+:isWritenBy rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            owl:inverseOf :writes ;
+            rdf:type owl:AsymmetricProperty ;
+            rdfs:domain :Review ;
+            rdfs:range :Passenger ;
+            rdfs:comment "The review is writen by the given passenger."@en-us ;
+            rdfs:label "isWritenBy" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn
+:livesIn rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf owl:topObjectProperty ;
+         rdf:type owl:AsymmetricProperty ;
+         rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+         rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country> ;
+         rdfs:comment "The person lives in the given country."@en-us ;
+         rdfs:label "livesIn" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#operates
+:operates rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:AsymmetricProperty ;
+          rdfs:domain :Airline ;
+          rdfs:range :Flight ;
+          rdfs:comment "The airline operates the given flight."@en-us ;
+          rdfs:label "operates" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#travelsIn
+:travelsIn rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdf:type owl:AsymmetricProperty ;
+           rdfs:domain :Passenger ;
+           rdfs:range :Flight ;
+           rdfs:comment "The passanger travles in the given flight."@en-us ;
+           rdfs:label "travelsIn" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses
+:uses rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf owl:topObjectProperty ;
+      rdf:type owl:AsymmetricProperty ;
+      rdfs:domain :Flight ;
+      rdfs:range :Aircraft ;
+      rdfs:comment "The flight uses the given aircraft."@en-us ;
+      rdfs:label "uses" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#writes
+:writes rdf:type owl:ObjectProperty ;
+        rdfs:subPropertyOf owl:topObjectProperty ;
+        rdf:type owl:AsymmetricProperty ;
+        rdfs:domain :Passenger ;
+        rdfs:range :Review ;
+        rdfs:comment "The passanger writes the given review."@en-us ;
+        rdfs:label "writes" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateFlight
+:dateFlight rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Flight ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "The date a flight takes place."@en-us ;
+            rdfs:label "dateFlight" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateReview
+:dateReview rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Review ;
+            rdfs:range xsd:dateTime ;
+            rdfs:comment "The date a review is writen."@en-us ;
+            rdfs:label "dateReview" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isVerified
+:isVerified rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+            rdfs:range xsd:boolean ;
+            rdfs:comment "Is the user verified in the app."@en-us ;
+            rdfs:label "isVerified" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#model
+:model rdf:type owl:DatatypeProperty ,
+                owl:FunctionalProperty ;
+       rdfs:domain :Aircraft ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The model of an airplane."@en-us ;
+       rdfs:label "model" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirline
+:nameAirline rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain :Airline ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The name of an airline."@en-us ;
+             rdfs:label "nameAirline" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirport
+:nameAirport rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+             rdfs:range xsd:string ;
+             rdfs:comment "The name of an airport."@en-us ;
+             rdfs:label "nameAirport" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#namePerson
+:namePerson rdf:type owl:DatatypeProperty ;
+            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+            rdfs:range xsd:string ;
+            rdfs:comment "The name of a person."@en-us ;
+            rdfs:label "namePerson" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff
+:rateCabinStaff rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Review ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "Rating of the service received by the cabin staff."@en-us ;
+                rdfs:label "rateCabinStaff" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment
+:rateEntertainment rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Review ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Rating of the quality in the offered entertainment."@en-us ;
+                   rdfs:label "rateEntertainment" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks
+:rateFoodDrinks rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Review ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "Ratinf of the quality of the plane's food and drinks."@en-us ;
+                rdfs:label "rateFoodDrinks" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService
+:rateGroundService rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Review ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "Rating of the quality of the ground service."@en-us ;
+                   rdfs:label "rateGroundService" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort
+:rateSeatComfort rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Review ;
+                 rdfs:range xsd:integer ;
+                 rdfs:comment "Rating for the seats comfort in the plane."@en-us ;
+                 rdfs:label "rateSeatComfort" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney
+:rateValueMoney rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Review ;
+                rdfs:range xsd:integer ;
+                rdfs:comment "Rating of the ratio of money spent for value received."@en-us ;
+                rdfs:label "rateValueMoney" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi
+:rateWifi rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Review ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Rating of the internet connection quality."@en-us ;
+          rdfs:label "rateWifi" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Review ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "The rating of a review."@en-us ;
+        rdfs:label "rating" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended
+:recommended rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Review ;
+             rdfs:range xsd:boolean ;
+             rdfs:comment "Recomendation of the service."@en-us ;
+             rdfs:label "recommended" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#title
+:title rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Review ;
+       rdfs:range xsd:string ;
+       rdfs:comment "The title of a review."@en-us ;
+       rdfs:label "title" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft
+:Aircraft rdf:type owl:Class ;
+          rdfs:comment "Vehicle that travels through air."@en-us ;
+          rdfs:label "Aircraft" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline
+:Airline rdf:type owl:Class ;
+         rdfs:comment "Comercial entity that organizes flights."@en-us ;
+         rdfs:label "Airline" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author
+:Author rdf:type owl:Class ;
+        owl:equivalentClass :Passenger ;
+        rdfs:subClassOf <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Business
+:Business rdf:type owl:Class ;
+          rdfs:subClassOf :TravelerType ;
+          rdfs:label "Person that takes the plane by themselves for business."@en-us ,
+                     "Business" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#BusinessClass
+:BusinessClass rdf:type owl:Class ;
+               rdfs:subClassOf :SeatType .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CargoPlane
+:CargoPlane rdf:type owl:Class ;
+            rdfs:subClassOf :Aircraft ;
+            rdfs:comment "Airplane used to transport goods."@en-us ;
+            rdfs:label "CargoPlane" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure
+:CoupleLeisure rdf:type owl:Class ;
+               rdfs:subClassOf :TravelerType ;
+               rdfs:comment "Person that takes the plane with their partner for leisure."@en-us ;
+               rdfs:label "CoupleLeisure" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#EconomyClass
+:EconomyClass rdf:type owl:Class ;
+              rdfs:subClassOf :SeatType .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FamilyLeisure
+:FamilyLeisure rdf:type owl:Class ;
+               rdfs:subClassOf :TravelerType ;
+               rdfs:comment "Person that takes the plane with their family for leisure."@en-us ;
+               rdfs:label "FamilyLeisure" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FirstClass
+:FirstClass rdf:type owl:Class ;
+            rdfs:subClassOf :SeatType .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight
+:Flight rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDestination ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasOrigin ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :uses ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Aircraft
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasConnection ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                        ] ;
+        rdfs:comment "Trip that goes from one airport to another via plane."@en-us ;
+        rdfs:label "Flight" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService
+:FullService rdf:type owl:Class ;
+             rdfs:subClassOf :Airline ;
+             owl:disjointWith :LowCost ;
+             rdfs:comment "Kind of airline that offers a variety of services and prices for their flights."@en-us ;
+             rdfs:label "FullService" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost
+:LowCost rdf:type owl:Class ;
+         rdfs:subClassOf :Airline ;
+         rdfs:comment "Kind of airline focused on offering low price flights at the cost of good service."@en-us ;
+         rdfs:label "LowCost" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger
+:Passenger rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+           rdfs:comment "The person who travels in a plane."@en-us ;
+           rdfs:label "Passenger" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PassengerPlane
+:PassengerPlane rdf:type owl:Class ;
+                rdfs:subClassOf :Aircraft ;
+                rdfs:comment "Airplane used to transport people."@en-us ;
+                rdfs:label "PassengerPlane" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PremiumClass
+:PremiumClass rdf:type owl:Class ;
+              rdfs:subClassOf :SeatType .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review
+:Review rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :isWritenBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Passenger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateCabinStaff ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateEntertainment ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateFoodDrinks ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateGroundService ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateSeatComfort ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateValueMoney ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateWifi ;
+                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rating ;
+                          owl:qualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :recommended ;
+                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:boolean
+                        ] ;
+        rdfs:comment "Piece of writing that talks about a personal experience with a product."@en-us ;
+        rdfs:label "Review" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SeatType
+:SeatType rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:unionOf ( :BusinessClass
+                                              :EconomyClass
+                                              :FirstClass
+                                              :PremiumClass
+                                            )
+                              ] ;
+          rdfs:comment "The type of seat a pasenger can buy."@en-us ;
+          rdfs:label "SeatType" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure
+:SoloLeisure rdf:type owl:Class ;
+             rdfs:subClassOf :TravelerType ;
+             rdfs:comment "Person that takes the plane by themselves for leisure."@en-us ;
+             rdfs:label "SoloLeisure" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#TravelerType
+:TravelerType rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:unionOf ( :Business
+                                                  :CoupleLeisure
+                                                  :FamilyLeisure
+                                                  :SoloLeisure
+                                                )
+                                  ] .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> rdf:type owl:Class ;
+                                                                                                              rdfs:comment "Place where planes land and take off from."@en-us ;
+                                                                                                              rdfs:label "dbo:Airport" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country> rdf:type owl:Class ;
+                                                                                                              rdfs:comment "A country in the world."@en-us ;
+                                                                                                              rdfs:label "dbo:Country" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> rdf:type owl:Class ;
+                                                                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                                               owl:onProperty :livesIn ;
+                                                                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                                                                               owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country>
+                                                                                                                             ] ;
+                                                                                                             rdfs:comment "A human being."@en-us ;
+                                                                                                             rdfs:label "dbo:Person" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftA350
+:AircraftA350 rdf:type owl:NamedIndividual ;
+              :model "A350" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftBoeing777
+:AircraftBoeing777 rdf:type owl:NamedIndividual ;
+                   :model "Boeing 777" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineQatarAirways
+:AirlineQatarAirways rdf:type owl:NamedIndividual ,
+                              :FullService ;
+                     :nameAirline "Qatar Airlines" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineRyanair
+:AirlineRyanair rdf:type owl:NamedIndividual ,
+                         :LowCost ;
+                :nameAirline "Ryanair" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FlightQA0
+:FlightQA0 rdf:type owl:NamedIndividual ;
+           :dateFlight "2024-03-02T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonBrianEnglish
+:PersonBrianEnglish rdf:type owl:NamedIndividual ,
+                             :CoupleLeisure ;
+                    :isVerified "true"^^xsd:boolean ;
+                    :namePerson "Brian English" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe
+:PersonMaryLe rdf:type owl:NamedIndividual ,
+                       :SoloLeisure ;
+              :isVerified "false"^^xsd:boolean ;
+              :namePerson "Mary Le" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonWayneBurgess
+:PersonWayneBurgess rdf:type owl:NamedIndividual ,
+                             :Business ;
+                    :isVerified "true"^^xsd:boolean ;
+                    :namePerson "Wayne Burgess" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review1
+:Review1 rdf:type owl:NamedIndividual ;
+         :isWritenBy :PersonMaryLe ;
+         :rateSeatComfort "2"^^xsd:int ;
+         :rateValueMoney "4"^^xsd:int ;
+         :rateWifi "3"^^xsd:int ;
+         :rating "2"^^xsd:int ;
+         :recommended "false"^^xsd:boolean ;
+         :title "Title1" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Aircraft
+                :Airline
+                :Flight
+                :Review
+                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country>
+                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Business
+                :CoupleLeisure
+                :FamilyLeisure
+                :SoloLeisure
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :BusinessClass
+                :EconomyClass
+                :FirstClass
+                :PremiumClass
+              )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

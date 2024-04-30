@@ -1,0 +1,20 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" "flight_satisfaction:Airline" "flight_satisfaction:TravelerType" "flight_satisfaction:BusinessClass" "flight_satisfaction:PremiumClass" "flight_satisfaction:Passenger" "flight_satisfaction:Business" "flight_satisfaction:FirstClass" "flight_satisfaction:Author" "flight_satisfaction:CoupleLeisure" "flight_satisfaction:Aircraft" "flight_satisfaction:SoloLeisure" "flight_satisfaction:FullService" "flight_satisfaction:CargoPlane" "flight_satisfaction:FamilyLeisure" "flight_satisfaction:LowCost" "flight_satisfaction:SeatType" "flight_satisfaction:EconomyClass" "flight_satisfaction:PassengerPlane" ; /*classes style*/
+	"flight_satisfaction:Business" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:BusinessClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:EconomyClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Author" -> "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FullService" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:PassengerPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FirstClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:LowCost" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:CoupleLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Passenger" -> "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FamilyLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:CargoPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:PremiumClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:SoloLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+
+}
