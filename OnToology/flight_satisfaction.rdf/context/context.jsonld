@@ -1,14 +1,17 @@
 {
   "@context" : {
     "rateValueMoney" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney"
     },
     "Review" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review"
     },
     "Country" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country"
+    },
+    "describes" : {
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes",
+      "@type" : "@id"
     },
     "operates" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#operates",
@@ -26,20 +29,21 @@
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy",
       "@type" : "@id"
     },
+    "isRuleEnabled" : {
+      "@id" : "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"
+    },
     "carries" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#carries",
       "@type" : "@id"
     },
     "rateSeatComfort" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort"
     },
     "CoupleLeisure" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure"
     },
     "rateWifi" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi"
     },
     "livesIn" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn",
@@ -78,14 +82,14 @@
       "@type" : "@id"
     },
     "Airport" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport"
     },
     "nameAirport" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirport",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
     },
     "Person" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person"
     },
     "dateReview" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateReview",
@@ -139,8 +143,7 @@
       "@type" : "@id"
     },
     "rateGroundService" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService"
     },
     "Airline" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline"
@@ -152,12 +155,10 @@
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author"
     },
     "rateFoodDrinks" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks"
     },
     "rateCabinStaff" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff"
     },
     "CargoPlane" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CargoPlane"
@@ -177,8 +178,7 @@
       "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
     },
     "rating" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating"
     },
     "PremiumClass" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PremiumClass"
@@ -190,8 +190,7 @@
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#BusinessClass"
     },
     "rateEntertainment" : {
-      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment",
-      "@type" : "http://www.w3.org/2001/XMLSchema#integer"
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment"
     },
     "isOriginOf" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isOriginOf",
@@ -209,6 +208,10 @@
     },
     "hasPassenger" : {
       "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasPassenger",
+      "@type" : "@id"
+    },
+    "isDescribedBy" : {
+      "@id" : "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy",
       "@type" : "@id"
     },
     "writes" : {
