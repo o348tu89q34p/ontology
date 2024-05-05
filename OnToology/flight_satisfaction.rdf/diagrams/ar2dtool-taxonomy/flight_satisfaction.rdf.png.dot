@@ -1,20 +1,38 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
-node [shape = rectangle, color="black"]; "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" "flight_satisfaction:Airline" "flight_satisfaction:TravelerType" "flight_satisfaction:BusinessClass" "flight_satisfaction:PremiumClass" "flight_satisfaction:Passenger" "flight_satisfaction:Business" "flight_satisfaction:FirstClass" "flight_satisfaction:Author" "flight_satisfaction:CoupleLeisure" "flight_satisfaction:Aircraft" "flight_satisfaction:SoloLeisure" "flight_satisfaction:FullService" "flight_satisfaction:CargoPlane" "flight_satisfaction:FamilyLeisure" "flight_satisfaction:LowCost" "flight_satisfaction:SeatType" "flight_satisfaction:EconomyClass" "flight_satisfaction:PassengerPlane" ; /*classes style*/
-	"flight_satisfaction:Business" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:BusinessClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:EconomyClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:Author" -> "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:FullService" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:PassengerPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:FirstClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:LowCost" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:CoupleLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:Passenger" -> "http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:FamilyLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
-	"flight_satisfaction:CargoPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
+node [shape = rectangle, color="black"]; "62b18e0:18f49829304:-7ec5" "flight_satisfaction:Business" "flight_satisfaction:SoloLeisure" "62b18e0:18f49829304:-7ee0" "62b18e0:18f49829304:-7eca" "62b18e0:18f49829304:-7eea" "62b18e0:18f49829304:-7eef" "62b18e0:18f49829304:-7eb1" "62b18e0:18f49829304:-7edb" "flight_satisfaction:EconomyClass" "flight_satisfaction:CargoPlane" "62b18e0:18f49829304:-7eac" "flight_satisfaction:Airline" "62b18e0:18f49829304:-7ef3" "flight_satisfaction:CoupleLeisure" "flight_satisfaction:Person" "flight_satisfaction:PassengerPlane" "flight_satisfaction:BusinessClass" "flight_satisfaction:TravelerType" "flight_satisfaction:FamilyLeisure" "62b18e0:18f49829304:-7ecd" "62b18e0:18f49829304:-7ea2" "flight_satisfaction:Author" "flight_satisfaction:Aircraft" "flight_satisfaction:Passenger" "flight_satisfaction:LowCost" "62b18e0:18f49829304:-7ee5" "flight_satisfaction:SeatType" "flight_satisfaction:FullService" "flight_satisfaction:FirstClass" "62b18e0:18f49829304:-7ed6" "flight_satisfaction:PremiumClass" ; /*classes style*/
+	"flight_satisfaction:PremiumClass" -> "62b18e0:18f49829304:-7ec5" [ label = "rdfs:subClassOf" ];
 	"flight_satisfaction:PremiumClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"NULL" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FamilyLeisure" -> "62b18e0:18f49829304:-7edb" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FamilyLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:EconomyClass" -> "62b18e0:18f49829304:-7ee0" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:EconomyClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:SoloLeisure" -> "62b18e0:18f49829304:-7eac" [ label = "rdfs:subClassOf" ];
 	"flight_satisfaction:SoloLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Author" -> "flight_satisfaction:Person" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Author" -> "flight_satisfaction:Passenger" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FullService" -> "62b18e0:18f49829304:-7ecd" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FullService" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FirstClass" -> "62b18e0:18f49829304:-7ed6" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:FirstClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:PassengerPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:TravelerType" -> "62b18e0:18f49829304:-7ea2" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:SeatType" -> "62b18e0:18f49829304:-7eb1" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:BusinessClass" -> "62b18e0:18f49829304:-7eea" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:BusinessClass" -> "flight_satisfaction:SeatType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Passenger" -> "flight_satisfaction:Person" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Passenger" -> "flight_satisfaction:Author" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Business" -> "62b18e0:18f49829304:-7eef" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Business" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:Airline" -> "62b18e0:18f49829304:-7ef3" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:CargoPlane" -> "flight_satisfaction:Aircraft" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:CoupleLeisure" -> "62b18e0:18f49829304:-7ee5" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:CoupleLeisure" -> "flight_satisfaction:TravelerType" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:LowCost" -> "62b18e0:18f49829304:-7eca" [ label = "rdfs:subClassOf" ];
+	"flight_satisfaction:LowCost" -> "flight_satisfaction:Airline" [ label = "rdfs:subClassOf" ];
 
 }

@@ -14,6 +14,10 @@ This section provides details for each class and property defined by [Ontology N
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
       </li>
       <li>
+         <a href="#Airport"
+            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+      </li>
+      <li>
          <a href="#Author"
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">
             <span>author</span>
@@ -30,20 +34,12 @@ This section provides details for each class and property defined by [Ontology N
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CargoPlane">CargoPlane</a>
       </li>
       <li>
+         <a href="#Country"
+            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
+      </li>
+      <li>
          <a href="#CoupleLeisure"
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure">CoupleLeisure</a>
-      </li>
-      <li>
-         <a href="#http://dbpedia.org/resource/Airport"
-            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-      </li>
-      <li>
-         <a href="#http://dbpedia.org/resource/Country"
-            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-      </li>
-      <li>
-         <a href="#http://dbpedia.org/resource/Person"
-            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
       </li>
       <li>
          <a href="#EconomyClass"
@@ -80,6 +76,10 @@ This section provides details for each class and property defined by [Ontology N
       <li>
          <a href="#PassengerPlane"
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PassengerPlane">PassengerPlane</a>
+      </li>
+      <li>
+         <a href="#Person"
+            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
       </li>
       <li>
          <a href="#Business"
@@ -145,20 +145,28 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#AircraftA350"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftA350">aircraft a350</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#AircraftBoeing777"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftBoeing777">aircraft boeing777</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Airline"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Flight"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Review"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -174,6 +182,18 @@ This section provides details for each class and property defined by [Ontology N
          <span class="markdown">Comercial entity that organizes flights.</span>
       </div>
       <dl class="description">
+         <dt>is equivalent to</dt>
+         <dd>
+            <a href="#FullService"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService">FullService</a>
+            <sup class="type-c" title="class">c</sup> 
+            <span class="logic">or</span> 
+            <a href="#LowCost"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost">LowCost</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has super-classes</dt>
+         <dd/>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#FullService"
@@ -190,20 +210,79 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#operates">operates</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#AirlineQatarAirways"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineQatarAirways">airline qatar airways</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#AirlineRyanair"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineRyanair">airline ryanair</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Aircraft"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Flight"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Review"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Airport">
+      <h3>Airport<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport</p>
+      <div class="comment">
+         <span class="markdown">Place where planes land and take off from.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isConnectionOf"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isConnectionOf">isConnectionOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isDestinationOf"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDestinationOf">isDestinationOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isOriginOf"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isOriginOf">isOriginOf</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#nameAirport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirport">nameAirport</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasConnection"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasDestination"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasOrigin"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Aircraft"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Review"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -224,9 +303,41 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+            <a href="#Passenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Passenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#travelsIn"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#travelsIn">travelsIn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#writes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#writes">writes</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#carries"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#carries">carries</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPassenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasPassenger">hasPassenger</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isWritenBy"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#PersonMaryLe"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe">person mary le</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -275,6 +386,41 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
       </dl>
    </div>
+   <div class="entity" id="Country">
+      <h3>Country<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country</p>
+      <div class="comment">
+         <span class="markdown">A country in the world.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#livesIn"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Aircraft"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Review"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="CoupleLeisure">
       <h3>CoupleLeisure<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -306,141 +452,6 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FamilyLeisure">FamilyLeisure</a>
             <sup class="type-c" title="class">c</sup>, <a href="#SoloLeisure"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure">SoloLeisure</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://dbpedia.org/resource/Airport">
-      <h3>dbo:Airport<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport</p>
-      <div class="comment">
-         <span class="markdown">Place where planes land and take off from.</span>
-      </div>
-      <dl class="description">
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#isConnectionOf"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isConnectionOf">isConnectionOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isDestinationOf"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDestinationOf">isDestinationOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#isOriginOf"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isOriginOf">isOriginOf</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#nameAirport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirport">nameAirport</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#hasConnection"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasDestination"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasOrigin"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Aircraft"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Review"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://dbpedia.org/resource/Country">
-      <h3>dbo:Country<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country</p>
-      <div class="comment">
-         <span class="markdown">A country in the world.</span>
-      </div>
-      <dl class="description">
-         <dt>is in range of</dt>
-         <dd>
-            <a href="#livesIn"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
-            <sup class="type-op" title="object property">op</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Aircraft"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Review"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="http://dbpedia.org/resource/Person">
-      <h3>dbo:Person<sup class="type-c" title="class">c</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person</p>
-      <div class="comment">
-         <span class="markdown">A human being.</span>
-      </div>
-      <dl class="description">
-         <dt>has super-classes</dt>
-         <dd/>
-         <dt>has sub-classes</dt>
-         <dd>
-            <a href="#Passenger"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Author"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#isVerified"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isVerified">isVerified</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#livesIn"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#namePerson"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#namePerson">namePerson</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
-         <dt>is disjoint with</dt>
-         <dd>
-            <a href="#Aircraft"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#Review"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -551,13 +562,17 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasPassenger"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasPassenger">hasPassenger</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isDescribedBy"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy">isDescribedBy</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#uses"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#isConnectionOf"
+            <a href="#describes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes">describes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isConnectionOf"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isConnectionOf">isConnectionOf</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#isDestinationOf"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDestinationOf">isDestinationOf</a>
@@ -571,20 +586,26 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#travelsIn">travelsIn</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#FlightQA0"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FlightQA0">flight q a0</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
          <dt>is disjoint with</dt>
          <dd>
             <a href="#Aircraft"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Airline"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Review"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -664,8 +685,16 @@ This section provides details for each class and property defined by [Ontology N
       <dl class="description">
          <dt>has super-classes</dt>
          <dd>
-            <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+            <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Author"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Author"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
          <dt>is in domain of</dt>
@@ -686,6 +715,12 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#PersonMaryLe"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe">person mary le</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="PassengerPlane">
@@ -703,6 +738,79 @@ This section provides details for each class and property defined by [Ontology N
          <dd>
             <a href="#Aircraft"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Person">
+      <h3>Person<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person</p>
+      <div class="comment">
+         <span class="markdown">A human being.</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd/>
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#Passenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Author"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isVerified"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isVerified">isVerified</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#livesIn"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#namePerson"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#namePerson">namePerson</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#travelsIn"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#travelsIn">travelsIn</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#writes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#writes">writes</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#carries"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#carries">carries</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasPassenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasPassenger">hasPassenger</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isWritenBy"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#PersonBrianEnglish"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonBrianEnglish">person brian english</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PersonMaryLe"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe">person mary le</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PersonWayneBurgess"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonWayneBurgess">person wayne burgess</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+         <dt>is disjoint with</dt>
+         <dd>
+            <a href="#Aircraft"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airline"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Flight"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Review"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -782,7 +890,9 @@ This section provides details for each class and property defined by [Ontology N
          <dd>
             <a href="#dateReview"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateReview">dateReview</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTicketType"
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#describes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes">describes</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTicketType"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTicketType">hasSeatType</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasTravelerType"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTravelerType">hasTravelerType</a>
@@ -812,9 +922,17 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
          <dt>is in range of</dt>
          <dd>
-            <a href="#writes"
+            <a href="#isDescribedBy"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy">isDescribedBy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#writes"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#writes">writes</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Review1"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review1">review1</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
          <dt>is disjoint with</dt>
          <dd>
@@ -822,14 +940,14 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Airline"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Airport"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Country"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
             <sup class="type-c" title="class">c</sup>, <a href="#Flight"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Airport"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Country"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
-            <sup class="type-c" title="class">c</sup>, <a href="#http://dbpedia.org/resource/Person"
-               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -863,6 +981,8 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PremiumClass">premium class</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has super-classes</dt>
+         <dd/>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#BusinessClass"
@@ -944,6 +1064,8 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure">SoloLeisure</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has super-classes</dt>
+         <dd/>
          <dt>has sub-classes</dt>
          <dd>
             <a href="#CoupleLeisure"
@@ -962,6 +1084,16 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTravelerType">hasTravelerType</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#PersonBrianEnglish"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonBrianEnglish">person brian english</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PersonMaryLe"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe">person mary le</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#PersonWayneBurgess"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonWayneBurgess">person wayne burgess</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
       </dl>
    </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
@@ -972,6 +1104,12 @@ This section provides details for each class and property defined by [Ontology N
       <li>
          <a href="#carries"
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#carries">carries</a>
+      </li>
+      <li>
+         <a href="#describes"
+            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes">
+            <span>describes</span>
+         </a>
       </li>
       <li>
          <a href="#hasConnection"
@@ -1000,6 +1138,10 @@ This section provides details for each class and property defined by [Ontology N
       <li>
          <a href="#isConnectionOf"
             title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isConnectionOf">isConnectionOf</a>
+      </li>
+      <li>
+         <a href="#isDescribedBy"
+            title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy">isDescribedBy</a>
       </li>
       <li>
          <a href="#isDestinationOf"
@@ -1067,9 +1209,57 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has range</dt>
             <dd>
+               <a href="#Author"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
                <a href="#Passenger"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
                <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="describes">
+      <h3>describes<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes</p>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Review"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Flight"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#isDescribedBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy">isDescribedBy</a>
+               <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
       </div>
@@ -1101,10 +1291,42 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1143,10 +1365,42 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1185,10 +1439,42 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1227,10 +1513,60 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
+            <dd>
+               <a href="#Author"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dd>
                <a href="#Passenger"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1263,10 +1599,80 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
             <dd>
                <a href="#SeatType"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SeatType">SeatType</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#BusinessClass"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#BusinessClass">business class</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#EconomyClass"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#EconomyClass">economy class</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#FirstClass"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FirstClass">first class</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#PremiumClass"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PremiumClass">premium class</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1293,10 +1699,80 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
             <dd>
                <a href="#TravelerType"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#TravelerType">traveler type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Business"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Business">Person that takes the plane by themselves for business.</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#CoupleLeisure"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure">CoupleLeisure</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#FamilyLeisure"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FamilyLeisure">FamilyLeisure</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#SoloLeisure"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure">SoloLeisure</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1325,8 +1801,8 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1335,10 +1811,75 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#hasConnection"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="isDescribedBy">
+      <h3>isDescribedBy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy</p>
+      <div class="comment">
+         <span class="markdown">A flight is described by a review.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Flight"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Review"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>is inverse of</dt>
+            <dd>
+               <a href="#describes"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes">describes</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -1367,14 +1908,46 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Flight"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1409,14 +1982,46 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Flight"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1461,6 +2066,38 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#uses"
@@ -1497,10 +2134,81 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
+            <dd>
+               <a href="#Author"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dd>
                <a href="#Passenger"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>is inverse of</dt>
@@ -1535,14 +2243,22 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Person"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Country"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country">dbo:Country</a>
+               <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1575,10 +2291,51 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#FullService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService">FullService</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#LowCost"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost">LowCost</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Flight"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1607,14 +2364,64 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
+               <a href="#Author"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
                <a href="#Passenger"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
                <a href="#Flight"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -1645,6 +2452,38 @@ This section provides details for each class and property defined by [Ontology N
             <dd>
                <a href="#Flight"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1685,8 +2524,26 @@ This section provides details for each class and property defined by [Ontology N
             </dd>
             <dt>has domain</dt>
             <dd>
+               <a href="#Author"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
                <a href="#Passenger"
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1695,6 +2552,59 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>is inverse of</dt>
             <dd>
                <a href="#isWritenBy"
@@ -1796,6 +2706,38 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#hasDestination"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasDestination">hasDestination</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasOrigin"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasOrigin">hasOrigin</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#uses"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#uses">uses</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Aircraft"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#hasConnection"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection">hasConnection</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">max</span> 1 <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#dateTime"
@@ -1823,6 +2765,59 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#dateTime"
@@ -1846,8 +2841,16 @@ This section provides details for each class and property defined by [Ontology N
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Person"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1910,6 +2913,15 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#FullService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService">FullService</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#LowCost"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost">LowCost</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#string"
@@ -1936,8 +2948,8 @@ This section provides details for each class and property defined by [Ontology N
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Airport"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport">dbo:Airport</a>
+               <a href="#Airport"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport">Airport</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1963,8 +2975,16 @@ This section provides details for each class and property defined by [Ontology N
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://dbpedia.org/resource/Person"
-                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person">dbo:Person</a>
+               <a href="#Person"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#livesIn"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#livesIn">livesIn</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Country"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country">Country</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
@@ -1994,12 +3014,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2021,12 +3090,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2048,12 +3166,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2075,12 +3242,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2102,12 +3318,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2129,12 +3394,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2156,12 +3470,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2183,12 +3546,61 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
-            <dt>has range</dt>
             <dd>
-               <a href="http://www.w3.org/2001/XMLSchema#integer"
-                  target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
+            <dt>has range</dt>
+            <dd/>
          </dl>
       </div>
    </div>
@@ -2210,6 +3622,59 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#boolean"
@@ -2237,6 +3702,59 @@ This section provides details for each class and property defined by [Ontology N
                   title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
+            <dd>
+               <a href="#isWritenBy"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">exactly</span> 1 <a href="#Passenger"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dd>
+               <a href="#rateEntertainment"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment">rateEntertainment</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateFoodDrinks"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks">rateFoodDrinks</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateGroundService"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService">rateGroundService</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateSeatComfort"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort">rateSeatComfort</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateValueMoney"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney">rateValueMoney</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateWifi"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rating"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#recommended"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended">recommended</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">exactly</span> 1</dd>
+            <dd>
+               <a href="#rateCabinStaff"
+                  title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff">rateCabinStaff</a>
+               <sup class="type-dp" title="data property">dp</sup> 
+               <span class="logic">max</span> 1</dd>
             <dt>has range</dt>
             <dd>
                <a href="http://www.w3.org/2001/XMLSchema#string"
@@ -2314,6 +3832,12 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftA350</p>
       <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Aircraft"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has facts</dt>
          <dd>
             <a href="#model"
@@ -2331,6 +3855,12 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftBoeing777</p>
       <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Aircraft"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Aircraft">Aircraft</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
          <dt>has facts</dt>
          <dd>
             <a href="#model"
@@ -2350,10 +3880,16 @@ This section provides details for each class and property defined by [Ontology N
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
+            <a href="#Airline"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <a href="#FullService"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService">FullService</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd/>
          <dt>has facts</dt>
          <dd>
             <a href="#nameAirline"
@@ -2373,10 +3909,16 @@ This section provides details for each class and property defined by [Ontology N
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
+            <a href="#Airline"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline">Airline</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <a href="#LowCost"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost">LowCost</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd/>
          <dt>has facts</dt>
          <dd>
             <a href="#nameAirline"
@@ -2394,6 +3936,16 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FlightQA0</p>
       <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Flight"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight">Flight</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
          <dt>has facts</dt>
          <dd>
             <a href="#dateFlight"
@@ -2420,6 +3972,18 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure">CoupleLeisure</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd>
+            <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#TravelerType"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#TravelerType">traveler type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd/>
+         <dd/>
          <dt>has facts</dt>
          <dd>
             <a href="#isVerified"
@@ -2448,11 +4012,40 @@ This section provides details for each class and property defined by [Ontology N
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
+            <a href="#Author"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author">author</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#Passenger"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger">Passenger</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
             <a href="#SoloLeisure"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure">SoloLeisure</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd>
+            <a href="#TravelerType"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#TravelerType">traveler type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd/>
+         <dd/>
          <dt>has facts</dt>
+         <dd>
+            <a href="#writes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#writes">writes</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#Review1"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review1">review1</a>
+         </dd>
          <dd>
             <a href="#isVerified"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isVerified">isVerified</a>
@@ -2484,6 +4077,18 @@ This section provides details for each class and property defined by [Ontology N
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Business">Person that takes the plane by themselves for business.</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dd>
+            <a href="#Person"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person">Person</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd>
+            <a href="#TravelerType"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#TravelerType">traveler type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd/>
+         <dd/>
          <dt>has facts</dt>
          <dd>
             <a href="#isVerified"
@@ -2510,7 +4115,30 @@ This section provides details for each class and property defined by [Ontology N
       <p>
          <strong>IRI:</strong> http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review1</p>
       <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Review"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review">Review</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
+         <dd/>
          <dt>has facts</dt>
+         <dd>
+            <a href="#describes"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes">describes</a>
+            <sup class="type-op" title="object property">op</sup> 
+            <a href="#FlightQA0"
+               title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FlightQA0">flight q a0</a>
+         </dd>
          <dd>
             <a href="#isWritenBy"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isWritenBy">isWritenBy</a>
@@ -2540,18 +4168,18 @@ This section provides details for each class and property defined by [Ontology N
             <a href="#rateWifi"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi">rateWifi</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#int"
+            <span class="literal">"3"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
          </dd>
          <dd>
             <a href="#rating"
                title="http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating">rating</a>
             <sup class="type-dp" title="data property">dp</sup> 
-            <span class="literal">"2"^^<a href="http://www.w3.org/2001/XMLSchema#int"
+            <span class="literal">"5"^^<a href="http://www.w3.org/2001/XMLSchema#integer"
                   target="_blank"
-                  title="http://www.w3.org/2001/XMLSchema#int">int</a>
+                  title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
             </span>
          </dd>
          <dd>
@@ -2571,6 +4199,11 @@ This section provides details for each class and property defined by [Ontology N
          </dd>
       </dl>
    </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     id="rules">
+   <h3 class="list" id="rule">Rules</h3>
+   <ul class="hlist"/>
 </div><div id="legend">
 <h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <div   class="entity">

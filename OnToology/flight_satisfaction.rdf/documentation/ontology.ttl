@@ -10,6 +10,14 @@
                                                                            rdfs:comment "Ontology that represents the answers to flight satisfaction surveys."@en-us .
 
 #################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -18,9 +26,23 @@
          rdfs:subPropertyOf owl:topObjectProperty ;
          rdf:type owl:AsymmetricProperty ;
          rdfs:domain :Aircraft ;
-         rdfs:range :Passenger ;
+         rdfs:range :Author ,
+                    :Passenger ,
+                    :Person ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :livesIn ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Country
+                    ] ;
          rdfs:comment "An aircraft carries a passenger."@en-us ;
          rdfs:label "carries" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#describes
+:describes rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isDescribedBy ;
+           rdfs:domain :Review ;
+           rdfs:range :Flight .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasConnection
@@ -28,8 +50,28 @@
                rdfs:subPropertyOf owl:topObjectProperty ;
                owl:inverseOf :isConnectionOf ;
                rdf:type owl:AsymmetricProperty ;
-               rdfs:domain :Flight ;
-               rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+               rdfs:domain :Flight ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasDestination ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOrigin ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :uses ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Aircraft
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasConnection ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ;
+               rdfs:range :Airport ;
                rdfs:comment "A flight has a connection on this airport."@en-us ;
                rdfs:label "hasConnection" .
 
@@ -39,8 +81,28 @@
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 owl:inverseOf :isDestinationOf ;
                 rdf:type owl:AsymmetricProperty ;
-                rdfs:domain :Flight ;
-                rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+                rdfs:domain :Flight ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasDestination ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasOrigin ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :uses ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Aircraft
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasConnection ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ;
+                rdfs:range :Airport ;
                 rdfs:comment "A flight has as destination this airport."@en-us ;
                 rdfs:label "hasDestination" .
 
@@ -50,8 +112,28 @@
            rdfs:subPropertyOf owl:topObjectProperty ;
            owl:inverseOf :isOriginOf ;
            rdf:type owl:AsymmetricProperty ;
-           rdfs:domain :Flight ;
-           rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+           rdfs:domain :Flight ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasDestination ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasOrigin ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :uses ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Aircraft
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasConnection ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ;
+           rdfs:range :Airport ;
            rdfs:comment "A flight has as origin this airport."@en-us ;
            rdfs:label "hasOrigin" .
 
@@ -60,8 +142,35 @@
 :hasPassenger rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdf:type owl:AsymmetricProperty ;
-              rdfs:domain :Flight ;
-              rdfs:range :Passenger ;
+              rdfs:domain :Flight ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasDestination ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Airport
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasOrigin ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Airport
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :uses ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Aircraft
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasConnection ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :Airport
+                          ] ;
+              rdfs:range :Author ,
+                         :Passenger ,
+                         :Person ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :livesIn ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Country
+                         ] ;
               rdfs:comment "A flight has this particular passanger."@en-us ;
               rdfs:label "hasPassenger" .
 
@@ -70,8 +179,65 @@
 :hasTicketType rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf owl:topObjectProperty ;
                rdf:type owl:AsymmetricProperty ;
-               rdfs:domain :Review ;
-               rdfs:range :SeatType ;
+               rdfs:domain :Review ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isWritenBy ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Passenger
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateEntertainment ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateFoodDrinks ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateGroundService ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateSeatComfort ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateValueMoney ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateWifi ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rating ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :recommended ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:boolean
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :rateCabinStaff ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:integer
+                           ] ;
+               rdfs:range :SeatType ,
+                          [ rdf:type owl:Class ;
+                            owl:unionOf ( :BusinessClass
+                                          :EconomyClass
+                                          :FirstClass
+                                          :PremiumClass
+                                        )
+                          ] ;
                rdfs:comment "Connect a review with its seat type."@en-us ;
                rdfs:label "hasSeatType" .
 
@@ -79,8 +245,65 @@
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#hasTravelerType
 :hasTravelerType rdf:type owl:ObjectProperty ,
                           owl:AsymmetricProperty ;
-                 rdfs:domain :Review ;
-                 rdfs:range :TravelerType ;
+                 rdfs:domain :Review ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isWritenBy ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Passenger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateEntertainment ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateFoodDrinks ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateGroundService ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateSeatComfort ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateValueMoney ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateWifi ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rating ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :recommended ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateCabinStaff ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ;
+                 rdfs:range :TravelerType ,
+                            [ rdf:type owl:Class ;
+                              owl:unionOf ( :Business
+                                            :CoupleLeisure
+                                            :FamilyLeisure
+                                            :SoloLeisure
+                                          )
+                            ] ;
                  rdfs:comment "The type of traveler that a review has."@en-us ;
                  rdfs:label "hasTravelerType" .
 
@@ -89,18 +312,66 @@
 :isConnectionOf rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf owl:topObjectProperty ;
                 rdf:type owl:AsymmetricProperty ;
-                rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
-                rdfs:range :Flight ;
+                rdfs:domain :Airport ;
+                rdfs:range :Flight ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasDestination ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOrigin ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :uses ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Aircraft
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasConnection ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Airport
+                           ] ;
                 rdfs:comment "The airport is a connection of the given flight."@en-us ;
                 rdfs:label "isConnectionOf" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDescribedBy
+:isDescribedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Flight ;
+               rdfs:range :Review ;
+               rdfs:comment "A flight is described by a review."@en-us ;
+               rdfs:label "isDescribedBy" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isDestinationOf
 :isDestinationOf rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf owl:topObjectProperty ;
                  rdf:type owl:AsymmetricProperty ;
-                 rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
-                 rdfs:range :Flight ;
+                 rdfs:domain :Airport ;
+                 rdfs:range :Flight ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasDestination ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasOrigin ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :uses ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Aircraft
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasConnection ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Airport
+                            ] ;
                  rdfs:comment "The airport is the destination of the given flight."@en-us ;
                  rdfs:label "isDestinationOf" .
 
@@ -109,8 +380,28 @@
 :isOriginOf rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf owl:topObjectProperty ;
             rdf:type owl:AsymmetricProperty ;
-            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
-            rdfs:range :Flight ;
+            rdfs:domain :Airport ;
+            rdfs:range :Flight ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasDestination ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasOrigin ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :uses ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Aircraft
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasConnection ;
+                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Airport
+                       ] ;
             rdfs:comment "The airport is the origin of the given flight."@en-us ;
             rdfs:label "isOriginOf" .
 
@@ -121,7 +412,27 @@
           owl:inverseOf :uses ;
           rdf:type owl:AsymmetricProperty ;
           rdfs:domain :Aircraft ;
-          rdfs:range :Flight ;
+          rdfs:range :Flight ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasDestination ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasOrigin ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :uses ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Aircraft
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasConnection ;
+                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ;
           rdfs:comment "The aircraft is used in the given flight."@en-us ;
           rdfs:label "isUsedIn" .
 
@@ -131,8 +442,65 @@
             rdfs:subPropertyOf owl:topObjectProperty ;
             owl:inverseOf :writes ;
             rdf:type owl:AsymmetricProperty ;
-            rdfs:domain :Review ;
-            rdfs:range :Passenger ;
+            rdfs:domain :Review ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isWritenBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Passenger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateEntertainment ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateFoodDrinks ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateGroundService ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateSeatComfort ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateValueMoney ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateWifi ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rating ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :recommended ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:boolean
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateCabinStaff ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ;
+            rdfs:range :Author ,
+                       :Passenger ,
+                       :Person ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :livesIn ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Country
+                       ] ;
             rdfs:comment "The review is writen by the given passenger."@en-us ;
             rdfs:label "isWritenBy" .
 
@@ -141,8 +509,13 @@
 :livesIn rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf owl:topObjectProperty ;
          rdf:type owl:AsymmetricProperty ;
-         rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
-         rdfs:range <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country> ;
+         rdfs:domain :Person ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :livesIn ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Country
+                     ] ;
+         rdfs:range :Country ;
          rdfs:comment "The person lives in the given country."@en-us ;
          rdfs:label "livesIn" .
 
@@ -151,8 +524,33 @@
 :operates rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
           rdf:type owl:AsymmetricProperty ;
-          rdfs:domain :Airline ;
-          rdfs:range :Flight ;
+          rdfs:domain :Airline ,
+                      [ rdf:type owl:Class ;
+                        owl:unionOf ( :FullService
+                                      :LowCost
+                                    )
+                      ] ;
+          rdfs:range :Flight ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasDestination ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasOrigin ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :uses ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Aircraft
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :hasConnection ;
+                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :Airport
+                     ] ;
           rdfs:comment "The airline operates the given flight."@en-us ;
           rdfs:label "operates" .
 
@@ -161,8 +559,35 @@
 :travelsIn rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            rdf:type owl:AsymmetricProperty ;
-           rdfs:domain :Passenger ;
-           rdfs:range :Flight ;
+           rdfs:domain :Author ,
+                       :Passenger ,
+                       :Person ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :livesIn ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Country
+                       ] ;
+           rdfs:range :Flight ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDestination ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Airport
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasOrigin ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Airport
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :uses ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Aircraft
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasConnection ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Airport
+                      ] ;
            rdfs:comment "The passanger travles in the given flight."@en-us ;
            rdfs:label "travelsIn" .
 
@@ -171,7 +596,27 @@
 :uses rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf owl:topObjectProperty ;
       rdf:type owl:AsymmetricProperty ;
-      rdfs:domain :Flight ;
+      rdfs:domain :Flight ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :hasDestination ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Airport
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :hasOrigin ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Airport
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :uses ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Aircraft
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :hasConnection ;
+                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Airport
+                  ] ;
       rdfs:range :Aircraft ;
       rdfs:comment "The flight uses the given aircraft."@en-us ;
       rdfs:label "uses" .
@@ -181,8 +626,65 @@
 :writes rdf:type owl:ObjectProperty ;
         rdfs:subPropertyOf owl:topObjectProperty ;
         rdf:type owl:AsymmetricProperty ;
-        rdfs:domain :Passenger ;
-        rdfs:range :Review ;
+        rdfs:domain :Author ,
+                    :Passenger ,
+                    :Person ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :livesIn ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Country
+                    ] ;
+        rdfs:range :Review ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :isWritenBy ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onClass :Passenger
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateEntertainment ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateFoodDrinks ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateGroundService ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateSeatComfort ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateValueMoney ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateWifi ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rating ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :recommended ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:boolean
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateCabinStaff ;
+                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ;
         rdfs:comment "The passanger writes the given review."@en-us ;
         rdfs:label "writes" .
 
@@ -193,7 +695,27 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateFlight
 :dateFlight rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Flight ;
+            rdfs:domain :Flight ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasDestination ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Airport
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasOrigin ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Airport
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :uses ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Aircraft
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :hasConnection ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Airport
+                        ] ;
             rdfs:range xsd:dateTime ;
             rdfs:comment "The date a flight takes place."@en-us ;
             rdfs:label "dateFlight" .
@@ -201,7 +723,57 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#dateReview
 :dateReview rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Review ;
+            rdfs:domain :Review ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :isWritenBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Passenger
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateEntertainment ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateFoodDrinks ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateGroundService ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateSeatComfort ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateValueMoney ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateWifi ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rating ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :recommended ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:boolean
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateCabinStaff ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ;
             rdfs:range xsd:dateTime ;
             rdfs:comment "The date a review is writen."@en-us ;
             rdfs:label "dateReview" .
@@ -209,7 +781,12 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#isVerified
 :isVerified rdf:type owl:DatatypeProperty ;
-            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+            rdfs:domain :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :livesIn ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Country
+                        ] ;
             rdfs:range xsd:boolean ;
             rdfs:comment "Is the user verified in the app."@en-us ;
             rdfs:label "isVerified" .
@@ -227,7 +804,12 @@
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirline
 :nameAirline rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
-             rdfs:domain :Airline ;
+             rdfs:domain :Airline ,
+                         [ rdf:type owl:Class ;
+                           owl:unionOf ( :FullService
+                                         :LowCost
+                                       )
+                         ] ;
              rdfs:range xsd:string ;
              rdfs:comment "The name of an airline."@en-us ;
              rdfs:label "nameAirline" .
@@ -236,7 +818,7 @@
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#nameAirport
 :nameAirport rdf:type owl:DatatypeProperty ,
                       owl:FunctionalProperty ;
-             rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> ;
+             rdfs:domain :Airport ;
              rdfs:range xsd:string ;
              rdfs:comment "The name of an airport."@en-us ;
              rdfs:label "nameAirport" .
@@ -244,7 +826,12 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#namePerson
 :namePerson rdf:type owl:DatatypeProperty ;
-            rdfs:domain <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+            rdfs:domain :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :livesIn ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Country
+                        ] ;
             rdfs:range xsd:string ;
             rdfs:comment "The name of a person."@en-us ;
             rdfs:label "namePerson" .
@@ -252,71 +839,577 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateCabinStaff
 :rateCabinStaff rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Review ;
-                rdfs:range xsd:integer ;
+                rdfs:domain :Review ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isWritenBy ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Passenger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateEntertainment ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateFoodDrinks ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateGroundService ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateSeatComfort ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateValueMoney ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateWifi ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rating ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :recommended ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateCabinStaff ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:onDatatype xsd:integer ;
+                             owl:withRestrictions ( [ xsd:minInclusive 1
+                                                    ]
+                                                    [ xsd:maxInclusive 5
+                                                    ]
+                                                  )
+                           ] ;
                 rdfs:comment "Rating of the service received by the cabin staff."@en-us ;
                 rdfs:label "rateCabinStaff" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateEntertainment
 :rateEntertainment rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Review ;
-                   rdfs:range xsd:integer ;
+                   rdfs:domain :Review ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isWritenBy ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Passenger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateEntertainment ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateFoodDrinks ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateGroundService ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateSeatComfort ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateValueMoney ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateWifi ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rating ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :recommended ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateCabinStaff ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1
+                                                       ]
+                                                       [ xsd:maxInclusive 5
+                                                       ]
+                                                     )
+                              ] ;
                    rdfs:comment "Rating of the quality in the offered entertainment."@en-us ;
                    rdfs:label "rateEntertainment" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateFoodDrinks
 :rateFoodDrinks rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Review ;
-                rdfs:range xsd:integer ;
+                rdfs:domain :Review ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isWritenBy ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Passenger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateEntertainment ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateFoodDrinks ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateGroundService ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateSeatComfort ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateValueMoney ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateWifi ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rating ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :recommended ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateCabinStaff ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:onDatatype xsd:integer ;
+                             owl:withRestrictions ( [ xsd:minInclusive 1
+                                                    ]
+                                                    [ xsd:maxInclusive 5
+                                                    ]
+                                                  )
+                           ] ;
                 rdfs:comment "Ratinf of the quality of the plane's food and drinks."@en-us ;
                 rdfs:label "rateFoodDrinks" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateGroundService
 :rateGroundService rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Review ;
-                   rdfs:range xsd:integer ;
+                   rdfs:domain :Review ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isWritenBy ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :Passenger
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateEntertainment ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateFoodDrinks ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateGroundService ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateSeatComfort ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateValueMoney ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateWifi ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rating ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :recommended ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:boolean
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :rateCabinStaff ;
+                                 owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:integer
+                               ] ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:onDatatype xsd:integer ;
+                                owl:withRestrictions ( [ xsd:minInclusive 1
+                                                       ]
+                                                       [ xsd:maxInclusive 5
+                                                       ]
+                                                     )
+                              ] ;
                    rdfs:comment "Rating of the quality of the ground service."@en-us ;
                    rdfs:label "rateGroundService" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateSeatComfort
 :rateSeatComfort rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Review ;
-                 rdfs:range xsd:integer ;
+                 rdfs:domain :Review ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isWritenBy ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Passenger
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateEntertainment ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateFoodDrinks ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateGroundService ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateSeatComfort ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateValueMoney ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateWifi ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rating ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :recommended ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:boolean
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :rateCabinStaff ;
+                               owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:integer
+                             ] ;
+                 rdfs:range [ rdf:type rdfs:Datatype ;
+                              owl:onDatatype xsd:integer ;
+                              owl:withRestrictions ( [ xsd:minInclusive 1
+                                                     ]
+                                                     [ xsd:maxInclusive 5
+                                                     ]
+                                                   )
+                            ] ;
                  rdfs:comment "Rating for the seats comfort in the plane."@en-us ;
                  rdfs:label "rateSeatComfort" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateValueMoney
 :rateValueMoney rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Review ;
-                rdfs:range xsd:integer ;
+                rdfs:domain :Review ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :isWritenBy ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Passenger
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateEntertainment ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateFoodDrinks ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateGroundService ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateSeatComfort ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateValueMoney ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateWifi ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rating ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :recommended ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:boolean
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :rateCabinStaff ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:integer
+                            ] ;
+                rdfs:range [ rdf:type rdfs:Datatype ;
+                             owl:onDatatype xsd:integer ;
+                             owl:withRestrictions ( [ xsd:minInclusive 1
+                                                    ]
+                                                    [ xsd:maxInclusive 5
+                                                    ]
+                                                  )
+                           ] ;
                 rdfs:comment "Rating of the ratio of money spent for value received."@en-us ;
                 rdfs:label "rateValueMoney" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rateWifi
 :rateWifi rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Review ;
-          rdfs:range xsd:integer ;
+          rdfs:domain :Review ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :isWritenBy ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Passenger
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateEntertainment ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateFoodDrinks ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateGroundService ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateSeatComfort ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateValueMoney ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateWifi ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rating ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :recommended ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:boolean
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :rateCabinStaff ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:integer
+                      ] ;
+          rdfs:range [ rdf:type rdfs:Datatype ;
+                       owl:onDatatype xsd:integer ;
+                       owl:withRestrictions ( [ xsd:minInclusive 1
+                                              ]
+                                              [ xsd:maxInclusive 5
+                                              ]
+                                            )
+                     ] ;
           rdfs:comment "Rating of the internet connection quality."@en-us ;
           rdfs:label "rateWifi" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#rating
 :rating rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Review ;
-        rdfs:range xsd:integer ;
+        rdfs:domain :Review ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :isWritenBy ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Passenger
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateEntertainment ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateFoodDrinks ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateGroundService ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateSeatComfort ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateValueMoney ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateWifi ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rating ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :recommended ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:boolean
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :rateCabinStaff ;
+                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onDataRange xsd:integer
+                    ] ;
+        rdfs:range [ rdf:type rdfs:Datatype ;
+                     owl:onDatatype xsd:integer ;
+                     owl:withRestrictions ( [ xsd:minInclusive 0
+                                            ]
+                                            [ xsd:maxInclusive 10
+                                            ]
+                                          )
+                   ] ;
         rdfs:comment "The rating of a review."@en-us ;
         rdfs:label "rating" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#recommended
 :recommended rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Review ;
+             rdfs:domain :Review ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isWritenBy ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass :Passenger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateEntertainment ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateFoodDrinks ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateGroundService ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateSeatComfort ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateValueMoney ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateWifi ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rating ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :recommended ;
+                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:boolean
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :rateCabinStaff ;
+                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ;
              rdfs:range xsd:boolean ;
              rdfs:comment "Recomendation of the service."@en-us ;
              rdfs:label "recommended" .
@@ -324,7 +1417,57 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#title
 :title rdf:type owl:DatatypeProperty ;
-       rdfs:domain :Review ;
+       rdfs:domain :Review ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :isWritenBy ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onClass :Passenger
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateEntertainment ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateFoodDrinks ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateGroundService ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateSeatComfort ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateValueMoney ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateWifi ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rating ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :recommended ;
+                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:boolean
+                   ] ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :rateCabinStaff ;
+                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                     owl:onDataRange xsd:integer
+                   ] ;
        rdfs:range xsd:string ;
        rdfs:comment "The title of a review."@en-us ;
        rdfs:label "title" .
@@ -342,26 +1485,62 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airline
 :Airline rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:unionOf ( :FullService
+                                             :LowCost
+                                           )
+                             ] ;
+         rdfs:subClassOf [ rdf:type owl:Class ;
+                           owl:unionOf ( :FullService
+                                         :LowCost
+                                       )
+                         ] ;
          rdfs:comment "Comercial entity that organizes flights."@en-us ;
          rdfs:label "Airline" .
+
+
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Airport
+:Airport rdf:type owl:Class ;
+         rdfs:comment "Place where planes land and take off from."@en-us ;
+         rdfs:label "Airport" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Author
 :Author rdf:type owl:Class ;
         owl:equivalentClass :Passenger ;
-        rdfs:subClassOf <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> .
+        rdfs:subClassOf :Passenger ,
+                        :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :livesIn ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Country
+                        ] .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Business
 :Business rdf:type owl:Class ;
-          rdfs:subClassOf :TravelerType ;
+          rdfs:subClassOf :TravelerType ,
+                          [ rdf:type owl:Class ;
+                            owl:unionOf ( :Business
+                                          :CoupleLeisure
+                                          :FamilyLeisure
+                                          :SoloLeisure
+                                        )
+                          ] ;
           rdfs:label "Person that takes the plane by themselves for business."@en-us ,
                      "Business" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#BusinessClass
 :BusinessClass rdf:type owl:Class ;
-               rdfs:subClassOf :SeatType .
+               rdfs:subClassOf :SeatType ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( :BusinessClass
+                                               :EconomyClass
+                                               :FirstClass
+                                               :PremiumClass
+                                             )
+                               ] .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CargoPlane
@@ -371,28 +1550,62 @@
             rdfs:label "CargoPlane" .
 
 
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Country
+:Country rdf:type owl:Class ;
+         rdfs:comment "A country in the world."@en-us ;
+         rdfs:label "Country" .
+
+
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#CoupleLeisure
 :CoupleLeisure rdf:type owl:Class ;
-               rdfs:subClassOf :TravelerType ;
+               rdfs:subClassOf :TravelerType ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Business
+                                               :CoupleLeisure
+                                               :FamilyLeisure
+                                               :SoloLeisure
+                                             )
+                               ] ;
                rdfs:comment "Person that takes the plane with their partner for leisure."@en-us ;
                rdfs:label "CoupleLeisure" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#EconomyClass
 :EconomyClass rdf:type owl:Class ;
-              rdfs:subClassOf :SeatType .
+              rdfs:subClassOf :SeatType ,
+                              [ rdf:type owl:Class ;
+                                owl:unionOf ( :BusinessClass
+                                              :EconomyClass
+                                              :FirstClass
+                                              :PremiumClass
+                                            )
+                              ] .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FamilyLeisure
 :FamilyLeisure rdf:type owl:Class ;
-               rdfs:subClassOf :TravelerType ;
+               rdfs:subClassOf :TravelerType ,
+                               [ rdf:type owl:Class ;
+                                 owl:unionOf ( :Business
+                                               :CoupleLeisure
+                                               :FamilyLeisure
+                                               :SoloLeisure
+                                             )
+                               ] ;
                rdfs:comment "Person that takes the plane with their family for leisure."@en-us ;
                rdfs:label "FamilyLeisure" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FirstClass
 :FirstClass rdf:type owl:Class ;
-            rdfs:subClassOf :SeatType .
+            rdfs:subClassOf :SeatType ,
+                            [ rdf:type owl:Class ;
+                              owl:unionOf ( :BusinessClass
+                                            :EconomyClass
+                                            :FirstClass
+                                            :PremiumClass
+                                          )
+                            ] .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Flight
@@ -400,12 +1613,12 @@
         rdfs:subClassOf [ rdf:type owl:Restriction ;
                           owl:onProperty :hasDestination ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                          owl:onClass :Airport
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasOrigin ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                          owl:onClass :Airport
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :uses ;
@@ -415,7 +1628,7 @@
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :hasConnection ;
                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                          owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
+                          owl:onClass :Airport
                         ] ;
         rdfs:comment "Trip that goes from one airport to another via plane."@en-us ;
         rdfs:label "Flight" .
@@ -423,7 +1636,12 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FullService
 :FullService rdf:type owl:Class ;
-             rdfs:subClassOf :Airline ;
+             rdfs:subClassOf :Airline ,
+                             [ rdf:type owl:Class ;
+                               owl:unionOf ( :FullService
+                                             :LowCost
+                                           )
+                             ] ;
              owl:disjointWith :LowCost ;
              rdfs:comment "Kind of airline that offers a variety of services and prices for their flights."@en-us ;
              rdfs:label "FullService" .
@@ -431,14 +1649,25 @@
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#LowCost
 :LowCost rdf:type owl:Class ;
-         rdfs:subClassOf :Airline ;
+         rdfs:subClassOf :Airline ,
+                         [ rdf:type owl:Class ;
+                           owl:unionOf ( :FullService
+                                         :LowCost
+                                       )
+                         ] ;
          rdfs:comment "Kind of airline focused on offering low price flights at the cost of good service."@en-us ;
          rdfs:label "LowCost" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Passenger
 :Passenger rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> ;
+           rdfs:subClassOf :Author ,
+                           :Person ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :livesIn ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :Country
+                           ] ;
            rdfs:comment "The person who travels in a plane."@en-us ;
            rdfs:label "Passenger" .
 
@@ -450,9 +1679,27 @@
                 rdfs:label "PassengerPlane" .
 
 
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Person
+:Person rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :livesIn ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Country
+                        ] ;
+        rdfs:comment "A human being."@en-us ;
+        rdfs:label "Person" .
+
+
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PremiumClass
 :PremiumClass rdf:type owl:Class ;
-              rdfs:subClassOf :SeatType .
+              rdfs:subClassOf :SeatType ,
+                              [ rdf:type owl:Class ;
+                                owl:unionOf ( :BusinessClass
+                                              :EconomyClass
+                                              :FirstClass
+                                              :PremiumClass
+                                            )
+                              ] .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review
@@ -463,49 +1710,49 @@
                           owl:onClass :Passenger
                         ] ,
                         [ rdf:type owl:Restriction ;
-                          owl:onProperty :rateCabinStaff ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
-                          owl:onDataRange xsd:integer
-                        ] ,
-                        [ rdf:type owl:Restriction ;
                           owl:onProperty :rateEntertainment ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rateFoodDrinks ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rateGroundService ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rateSeatComfort ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rateValueMoney ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rateWifi ;
-                          owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :rating ;
-                          owl:qualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:integer
                         ] ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :recommended ;
-                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:boolean
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :rateCabinStaff ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
                         ] ;
         rdfs:comment "Piece of writing that talks about a personal experience with a product."@en-us ;
         rdfs:label "Review" .
@@ -520,13 +1767,27 @@
                                               :PremiumClass
                                             )
                               ] ;
+          rdfs:subClassOf [ rdf:type owl:Class ;
+                            owl:unionOf ( :BusinessClass
+                                          :EconomyClass
+                                          :FirstClass
+                                          :PremiumClass
+                                        )
+                          ] ;
           rdfs:comment "The type of seat a pasenger can buy."@en-us ;
           rdfs:label "SeatType" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#SoloLeisure
 :SoloLeisure rdf:type owl:Class ;
-             rdfs:subClassOf :TravelerType ;
+             rdfs:subClassOf :TravelerType ,
+                             [ rdf:type owl:Class ;
+                               owl:unionOf ( :Business
+                                             :CoupleLeisure
+                                             :FamilyLeisure
+                                             :SoloLeisure
+                                           )
+                             ] ;
              rdfs:comment "Person that takes the plane by themselves for leisure."@en-us ;
              rdfs:label "SoloLeisure" .
 
@@ -539,30 +1800,14 @@
                                                   :FamilyLeisure
                                                   :SoloLeisure
                                                 )
-                                  ] .
-
-
-###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport
-<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport> rdf:type owl:Class ;
-                                                                                                              rdfs:comment "Place where planes land and take off from."@en-us ;
-                                                                                                              rdfs:label "dbo:Airport" .
-
-
-###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country
-<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country> rdf:type owl:Class ;
-                                                                                                              rdfs:comment "A country in the world."@en-us ;
-                                                                                                              rdfs:label "dbo:Country" .
-
-
-###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person
-<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person> rdf:type owl:Class ;
-                                                                                                             rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                                                                                                               owl:onProperty :livesIn ;
-                                                                                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                                                                               owl:onClass <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country>
-                                                                                                                             ] ;
-                                                                                                             rdfs:comment "A human being."@en-us ;
-                                                                                                             rdfs:label "dbo:Person" .
+                                  ] ;
+              rdfs:subClassOf [ rdf:type owl:Class ;
+                                owl:unionOf ( :Business
+                                              :CoupleLeisure
+                                              :FamilyLeisure
+                                              :SoloLeisure
+                                            )
+                              ] .
 
 
 #################################################################
@@ -570,60 +1815,196 @@
 #################################################################
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftA350
-:AircraftA350 rdf:type owl:NamedIndividual ;
+:AircraftA350 rdf:type owl:NamedIndividual ,
+                       :Aircraft ;
               :model "A350" .
 
 
+###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftA350-1000
+:AircraftA350-1000 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AircraftBoeing777
-:AircraftBoeing777 rdf:type owl:NamedIndividual ;
+:AircraftBoeing777 rdf:type owl:NamedIndividual ,
+                            :Aircraft ;
                    :model "Boeing 777" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineQatarAirways
 :AirlineQatarAirways rdf:type owl:NamedIndividual ,
-                              :FullService ;
+                              :Airline ,
+                              :FullService ,
+                              [ rdf:type owl:Class ;
+                                owl:unionOf ( :FullService
+                                              :LowCost
+                                            )
+                              ] ;
                      :nameAirline "Qatar Airlines" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#AirlineRyanair
 :AirlineRyanair rdf:type owl:NamedIndividual ,
-                         :LowCost ;
+                         :Airline ,
+                         :LowCost ,
+                         [ rdf:type owl:Class ;
+                           owl:unionOf ( :FullService
+                                         :LowCost
+                                       )
+                         ] ;
                 :nameAirline "Ryanair" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#FlightQA0
-:FlightQA0 rdf:type owl:NamedIndividual ;
+:FlightQA0 rdf:type owl:NamedIndividual ,
+                    :Flight ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasDestination ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Airport
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasOrigin ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Airport
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :uses ;
+                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Aircraft
+                    ] ,
+                    [ rdf:type owl:Restriction ;
+                      owl:onProperty :hasConnection ;
+                      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                      owl:onClass :Airport
+                    ] ;
            :dateFlight "2024-03-02T00:00:00"^^xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonBrianEnglish
 :PersonBrianEnglish rdf:type owl:NamedIndividual ,
-                             :CoupleLeisure ;
+                             :CoupleLeisure ,
+                             :Person ,
+                             :TravelerType ,
+                             [ rdf:type owl:Class ;
+                               owl:unionOf ( :Business
+                                             :CoupleLeisure
+                                             :FamilyLeisure
+                                             :SoloLeisure
+                                           )
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :livesIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Country
+                             ] ;
                     :isVerified "true"^^xsd:boolean ;
                     :namePerson "Brian English" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonMaryLe
 :PersonMaryLe rdf:type owl:NamedIndividual ,
-                       :SoloLeisure ;
+                       :Author ,
+                       :Passenger ,
+                       :Person ,
+                       :SoloLeisure ,
+                       :TravelerType ,
+                       [ rdf:type owl:Class ;
+                         owl:unionOf ( :Business
+                                       :CoupleLeisure
+                                       :FamilyLeisure
+                                       :SoloLeisure
+                                     )
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :livesIn ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Country
+                       ] ;
+              :writes :Review1 ;
               :isVerified "false"^^xsd:boolean ;
               :namePerson "Mary Le" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#PersonWayneBurgess
 :PersonWayneBurgess rdf:type owl:NamedIndividual ,
-                             :Business ;
+                             :Business ,
+                             :Person ,
+                             :TravelerType ,
+                             [ rdf:type owl:Class ;
+                               owl:unionOf ( :Business
+                                             :CoupleLeisure
+                                             :FamilyLeisure
+                                             :SoloLeisure
+                                           )
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :livesIn ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Country
+                             ] ;
                     :isVerified "true"^^xsd:boolean ;
                     :namePerson "Wayne Burgess" .
 
 
 ###  http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#Review1
-:Review1 rdf:type owl:NamedIndividual ;
+:Review1 rdf:type owl:NamedIndividual ,
+                  :Review ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :isWritenBy ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onClass :Passenger
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateEntertainment ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateFoodDrinks ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateGroundService ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateSeatComfort ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateValueMoney ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateWifi ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rating ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :recommended ;
+                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:boolean
+                  ] ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :rateCabinStaff ;
+                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                    owl:onDataRange xsd:integer
+                  ] ;
+         :describes :FlightQA0 ;
          :isWritenBy :PersonMaryLe ;
          :rateSeatComfort "2"^^xsd:int ;
          :rateValueMoney "4"^^xsd:int ;
-         :rateWifi "3"^^xsd:int ;
-         :rating "2"^^xsd:int ;
+         :rateWifi 3 ;
+         :rating 5 ;
          :recommended "false"^^xsd:boolean ;
          :title "Title1" .
 
@@ -632,14 +2013,42 @@
 #    General axioms
 #################################################################
 
+[ rdf:type owl:Class ;
+  owl:unionOf ( :Business
+                :CoupleLeisure
+                :FamilyLeisure
+                :SoloLeisure
+              ) ;
+  rdfs:subClassOf :TravelerType
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( :BusinessClass
+                :EconomyClass
+                :FirstClass
+                :PremiumClass
+              ) ;
+  rdfs:subClassOf :SeatType
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( :FullService
+                :LowCost
+              ) ;
+  rdfs:subClassOf :Airline
+] .
+
+
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :Aircraft
                 :Airline
+                :Airport
+                :Country
                 :Flight
+                :Person
                 :Review
-                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Airport>
-                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Country>
-                <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction#http://dbpedia.org/resource/Person>
               )
 ] .
 
@@ -661,5 +2070,50 @@
               )
 ] .
 
+
+#################################################################
+#    Rules
+#################################################################
+
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/p> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/f> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/r> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "If a person travles in a flight and that person writes a review, the review describes the flight" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Person ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/p>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :travelsIn ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/p> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/f>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :writes ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/p> ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/r>
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :describes ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/r> ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/usuari/ontologies/2024/3/flight_satisfaction/f>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 ###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
